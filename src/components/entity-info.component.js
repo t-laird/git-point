@@ -96,7 +96,12 @@ export const EntityInfo = ({ entity, orgs, locale, navigation }: Props) => {
               type: 'octicon',
             }}
             subtitle={entity.location}
-            onPress={() => Communications.web(getLocationLink(entity.location))}
+            onPress={() => {
+              return navigation.navigate('SearchLocation', {
+                location: entity.location,
+                title: 'Search',
+              });
+            }}
           />
         )}
 
@@ -111,7 +116,8 @@ export const EntityInfo = ({ entity, orgs, locale, navigation }: Props) => {
             }}
             subtitle={entity.email}
             onPress={() =>
-              Communications.email([entity.email], null, null, null, null)}
+              Communications.email([entity.email], null, null, null, null)
+            }
           />
         )}
 

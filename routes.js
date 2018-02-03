@@ -207,6 +207,12 @@ const sharedRoutes = {
       title: navigation.state.params.title,
     }),
   },
+  SearchLocation: {
+    screen: SearchScreen,
+    navigationOptions: ({ navigation }) => ({
+      title: navigation.state.params.title,
+    }),
+  },
 };
 
 const HomeStackNavigator = StackNavigator(
